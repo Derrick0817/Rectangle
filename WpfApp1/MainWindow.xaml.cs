@@ -26,7 +26,7 @@ namespace WpfApp1
             areaInput.TextChanged += areaInput_TextChanged;
         }
 
-        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        public void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
             // Only allow numeric input
             e.Handled = !double.TryParse(e.Text, out _);
@@ -42,7 +42,7 @@ namespace WpfApp1
             } 
         }
 
-        private void areaInput_TextChanged(object sender, TextChangedEventArgs e)
+        public void areaInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (double.TryParse(areaInput.Text, out double area) && area > 0)
             {
