@@ -5,20 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="600">
+        Title="MainWindow" Height="500" Width="800">
     <Grid Margin="10">
         <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
 
-        <Label Grid.Row="0" Content="Height:" VerticalAlignment="Center" Height="26" Margin="0,2,523,3" />
-        <Canvas Grid.Row="1" Margin="0,0,0,-317">
+        <Label Grid.Row="1" Content="Height:" VerticalAlignment="Center" Height="26" Margin="0,2,523,3" />
+        <Canvas x:Name="display" Grid.Row="2" Margin="0,0,0,-397">
             <Rectangle x:Name="rectangle" Fill="SkyBlue" Width="0" Height="0" Canvas.Top="0" Canvas.Left="0"/>
+            <Ellipse x:Name="ellipse" Fill="SkyBlue" Width="0" Height="0" Canvas.Top="0" Canvas.Left="0"/>
         </Canvas>
-        <TextBox x:Name="heightInput" HorizontalAlignment="Left" Height="23" Margin="54,6,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberValidationTextBox"/>
-        <Label Grid.Row="0" Content="Area：" VerticalAlignment="Center" Height="26" Margin="197,2,326,3" />
-        <TextBox x:Name="areaInput" HorizontalAlignment="Left" Height="23" Margin="238,5,0,0" TextWrapping="Wrap" Text="10000" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberValidationTextBox"/>
+        <TextBox x:Name="heightInput" Grid.Row="1" HorizontalAlignment="Left" Height="23" Margin="54,6,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberValidationTextBox"/>
+        <Label Grid.Row="1" Content="Area：" VerticalAlignment="Center" Height="26" Margin="197,2,523,3" />
+        <TextBox x:Name="areaInput" Grid.Row="1" HorizontalAlignment="Left" Height="23" Margin="238,5,0,0" TextWrapping="Wrap" Text="10000" VerticalAlignment="Top" Width="120" PreviewTextInput="NumberValidationTextBox"/>
+        <ComboBox x:Name="menu" Grid.Row="0" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="120" Height="20">
+            <ComboBoxItem Content="Rectangle"/>
+            <ComboBoxItem Content="Ellipse"/>
+        </ComboBox>
+        <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="254,0,0,0" TextWrapping="Wrap" Text="Change a number after selecting a shape to display" VerticalAlignment="Top"/>
     </Grid>
 </Window>
